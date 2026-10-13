@@ -1,0 +1,37 @@
+. HTML File (index.html)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition Program</title>
+</head>
+<body>
+<h2>Addition of Two Numbers</h2>
+<form action="add.jsp" method="get">
+First Number :
+<input type="text" name="n1">
+<br><br>
+Second Number :
+<input type="text" name="n2">
+<br><br>
+<input type="submit" value="Add">
+</form>
+</body>
+</html>
+
+2. JSP File (add.jsp)
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title>Addition Result</title>
+</head>
+
+<body>
+<%
+    int a = Integer.parseInt(request.getParameter("n1"));
+    int b = Integer.parseInt(request.getParameter("n2"));
+    int c = a + b;
+%>
+<h2>Addition Result</h2>
+<%= "Sum = " + c %>
+</body>
+</html>
